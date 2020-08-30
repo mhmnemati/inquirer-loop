@@ -16,8 +16,26 @@ npm install --save inquirer-loop
 
 ## Usage
 
-```sh
-yo kservice
+```js
+inquirer.registerPrompt("loop", require("inquirer-loop"));
+
+inquirer.prompt({
+    type: "loop",
+    name: "items",
+    message: "Add another item?",
+    prompts: [
+        {
+            type: "input",
+            name: "key",
+            message: "Enter item key",
+        },
+        {
+            type: "input",
+            name: "value",
+            message: "Enter item value",
+        },
+    ],
+});
 ```
 
 ---
