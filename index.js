@@ -12,8 +12,8 @@ module.exports = class extends Base {
 
         if (loop.loop) {
             return [
-                await this.prompt(this.opt.questions),
-                ...(await this._promptLoop(message, questions)),
+                await Inquirer.prompt(this.opt.questions),
+                ...(await this._run()),
             ];
         } else {
             return [];
