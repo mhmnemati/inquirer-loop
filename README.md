@@ -17,7 +17,7 @@ npm install --save inquirer-loop
 ## Usage
 
 ```js
-inquirer.registerPrompt("loop", require("inquirer-loop"));
+inquirer.registerPrompt("loop", require("inquirer-loop")(inquirer));
 
 inquirer.prompt({
     type: "loop",
