@@ -2,7 +2,7 @@ const Base = require("inquirer/lib/prompts/base");
 
 module.exports = (Inquirer) =>
     class extends Base {
-        async _run() {
+        async run() {
             this.screen.render(" ");
 
             const loop = await Inquirer.prompt({
@@ -15,7 +15,7 @@ module.exports = (Inquirer) =>
             if (loop.loop) {
                 return [
                     await Inquirer.prompt(this.opt.questions),
-                    ...(await this._run()),
+                    ...(await this.run()),
                 ];
             } else {
                 return [];
