@@ -23,7 +23,7 @@ inquirer.prompt({
     type: "loop",
     name: "items",
     message: "Add another item?",
-    prompts: [
+    questions: [
         {
             type: "input",
             name: "key",
